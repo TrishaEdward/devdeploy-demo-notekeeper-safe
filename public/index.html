@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NoteKeeper</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Sign-in screen -->
+  <section id="login" class="auth">
+    <div class="auth-card">
+      <div class="logo">📝 NoteKeeper</div>
+      <p class="muted">Private notes, written the safe way.</p>
+      <form id="loginForm">
+        <input id="name" placeholder="Username" autocomplete="username">
+        <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+        <div id="msg" class="error"></div>
+        <button class="btn" type="submit">Sign in</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Notes app -->
+  <div id="app" hidden>
+    <header class="topbar">
+      <div class="logo">📝 NoteKeeper</div>
+      <div class="user">
+        <div id="avatar" class="avatar"></div>
+        <span id="who"></span>
+        <button id="logoutBtn" class="btn ghost" type="button">Sign out</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>New note</h2>
+        <form id="noteForm" class="stack">
+          <input id="title" placeholder="Title" maxlength="100" required>
+          <textarea id="body" rows="5" placeholder="Write something…" maxlength="2000"></textarea>
+          <div id="counter" class="muted counter">0 / 2000</div>
+          <button class="btn" type="submit">Save note</button>
+        </form>
+      </section>
+
+      <section>
+        <form id="searchForm" class="toolbar">
+          <input id="q" placeholder="Search your notes…" autocomplete="off">
+          <button class="btn" type="submit">Search</button>
+          <button class="btn ghost" id="clearSearch" type="button">Clear</button>
+        </form>
+        <div id="notes" class="notes"></div>
+
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/app.js"></script>
+</body>
+</html>

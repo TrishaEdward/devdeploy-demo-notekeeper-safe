@@ -1,0 +1,15 @@
+{
+  "name": "devdeploy-demo-notekeeper-safe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DevDeploy demo: a full-stack notes app written the safe way. It should pass the gate with warnings and deploy - and still hide one logic flaw no scanner can see",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "5.2.1",
+    "sequelize": "6.37.7",
+    "sqlite3": "5.1.7"
+  }
+}
