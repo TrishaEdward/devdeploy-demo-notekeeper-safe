@@ -20,8 +20,11 @@ const DEMO_USERS = {
   alice: process.env.ALICE_PASSWORD || crypto.randomBytes(8).toString('hex'),
   bob: process.env.BOB_PASSWORD || crypto.randomBytes(8).toString('hex'),
 };
-if (!process.env.ALICE_PASSWORD) {
-  console.log('Demo password for alice (set ALICE_PASSWORD to choose your own):', DEMO_USERS.alice);
+// Random passwords exist only in memory and in the startup log - never in source code.
+for (const user of Object.keys(DEMO_USERS)) {
+  if (!process.env[`${user.toUpperCase()}_PASSWORD`]) {
+    console.log(`Demo password for ${user} (set ${user.toUpperCase()}_PASSWORD to choose your own): ${DEMO_USERS[user]}`);
+  }
 }
 
 async function initDb() {

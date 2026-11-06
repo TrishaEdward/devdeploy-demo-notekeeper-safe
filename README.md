@@ -18,5 +18,7 @@ Full write-up: `docs/demo-apps-plan.md` in the DevDeploy project.
 **UI:** a sign-in screen, note cards, search, toasts and dark mode. User content is only ever inserted as text, never HTML.
 
 Run locally: `npm install && npm start` → http://localhost:3000
-(the demo password for `alice` is printed at startup; set `ALICE_PASSWORD` / `BOB_PASSWORD` to choose your own).
+(random passwords for `alice` and `bob` are printed in the startup log; set `ALICE_PASSWORD` / `BOB_PASSWORD` to choose your own).
+
+**Note:** this demo keeps sessions, passwords and notes in memory, so run it as a single replica.
 Companion app that should be blocked: `devdeploy-demo-booknook-vulnerable`.
